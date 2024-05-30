@@ -1,23 +1,22 @@
-import mongoose from 'mongoose';
-import Product from '../models/product.js';
-import products from "./data.js"
+import mongoose from "mongoose";
+import products from "./data.js";
+import Product from "../models/product.js";
 
+const seedProducts = async () => {
+  try {
+    await mongoose.connect("mongodb+srv://Sukhman:lightspeed299792458@shopit.c3t9uiz.mongodb.net/?retryWrites=true&w=majority&appName=SHOPIT");
 
+    await Product.deleteMany();
+    console.log("Products are deleted");
 
-const seedProducts= async () => {
-    try{
+    await Product.insertMany(products);
+    console.log("Products are added");
 
-        await mongoose.connect("mongodb://localhost:27017/shopit-v2");
-        await Product.deleteMany();
-        console.log("Products are deleted");
-
-        await Product.insertMany(products);
-        console.log("All products are added");
-
-    }catch(error){
-        console.log(error.message);
-        process.exit();
-    }
-}
+    process.exit();
+  } catch (error) {
+    console.log(error.message);
+    process.exit();
+  }
+};
 
 seedProducts();

@@ -1,5 +1,5 @@
 {
-  "name": "ShopIT",
+  "name": "shopit-v2",
   "type": "module",
   "version": "1.0.0",
   "description": "Ecommerce App",
@@ -10,18 +10,21 @@
     "prod": "SET NODE_ENV=PRODUCTION& nodemon backend/app.js",
     "seeder": "node backend/seeder/seeder.js"
   },
-  "author": "Sukhman",
+  "author": "Ghulam Abbas",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.2.0",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.2",
-    "path": "^0.12.7"
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.5",
+    "stripe": "^15.7.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.0.1"
   }
 }
